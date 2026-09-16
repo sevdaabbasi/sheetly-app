@@ -1,0 +1,308 @@
+/* Keep the dense spreadsheet workspace compact without using micro text. */
+.dash {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+select,
+textarea {
+  line-height: 1.35;
+}
+
+/* Canva-style navigation rail */
+.tool-rail nav span {
+  max-width: 58px;
+  color: #b5c2ce;
+  font-size: 10px;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.tool-rail nav button.selected span,
+.tool-rail nav button:hover span {
+  color: #fff;
+}
+
+.tool-rail nav em {
+  font-size: 9px;
+}
+
+/* File and sheet drawer */
+.asset-drawer > header small {
+  color: #65736c;
+  font-size: 10px;
+}
+
+.asset-drawer > header b {
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.drawer-upload b {
+  font-size: 12px;
+}
+
+.drawer-upload small {
+  color: #d1dbe1;
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+.side-section-title {
+  color: #586860;
+  font-size: 10px;
+}
+
+.side-section-title em,
+.side-file small,
+.side-sheet em,
+.workspace-user small {
+  color: #62746a;
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+.side-file b,
+.side-sheet span,
+.workspace-user b {
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.drawer-empty b {
+  font-size: 12px;
+}
+
+.drawer-empty small {
+  color: #68786f;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+/* Top menu */
+.top-file b {
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+.top-file small {
+  color: #617168;
+  font-size: 10px;
+  line-height: 1.3;
+}
+
+.top-nav button,
+.top-actions button {
+  font-size: 11px;
+}
+
+/* Spreadsheet surface */
+.data-toolbar span,
+.legend,
+.legend strong {
+  color: #405149;
+  font-size: 11px;
+}
+
+.legend small {
+  color: #65756d;
+  font-size: 10px;
+}
+
+.table-status {
+  font-size: 10px !important;
+}
+
+.data-table table {
+  color: #1b2d24;
+  font-size: 12px;
+}
+
+.data-table th,
+.data-table td {
+  line-height: 1.45;
+}
+
+.data-table th {
+  color: #34483e;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+/* Ready actions panel */
+.ai-head b {
+  font-size: 14px;
+}
+
+.ai-head small {
+  color: #53655b;
+  font-size: 11px;
+}
+
+.compact-ready .management-head h2 {
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.compact-ready .management-head p {
+  color: #596a61;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.compact-ready .action-tabs button {
+  padding: 6px 8px;
+  color: #52635a;
+  font-size: 10px;
+}
+
+.compact-ready .action-search {
+  height: 34px;
+}
+
+.compact-ready .action-search input {
+  color: #26382f;
+  font-size: 11px;
+}
+
+.compact-ready .action-search input::placeholder {
+  color: #718078;
+}
+
+.compact-ready .action-picker {
+  gap: 7px;
+  max-height: 230px;
+}
+
+.compact-ready .action-picker > button {
+  min-height: 72px;
+  padding: 9px 7px;
+}
+
+.compact-ready .action-picker b {
+  color: #24362d;
+  font-size: 10px;
+  line-height: 1.3;
+}
+
+.compact-ready .action-form h3 {
+  color: #15271e;
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.compact-ready .action-form label {
+  color: #46584f;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.compact-ready .action-form input,
+.compact-ready .action-form select {
+  color: #1c2e25;
+  font-size: 12px;
+}
+
+.compact-ready .action-form input::placeholder {
+  color: #7b8982;
+}
+
+.action-form .toggle-field span,
+.form-warning,
+.form-info {
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.form-warning {
+  color: #794914;
+}
+
+.form-info {
+  color: #285c45;
+}
+
+.compact-ready .create-command {
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+/* Result, validation and change-preview copy */
+.result-card b {
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.result-card p,
+.result-card button,
+.studio-error,
+.global-error,
+.ai-thinking,
+.job-progress > div {
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.row-change-badge,
+.change-label,
+.cell-note {
+  font-size: 9px;
+  line-height: 1.3;
+}
+
+.change-summary b {
+  font-size: 11px;
+}
+
+.change-summary small {
+  color: #53685e;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+/* File, history and saved-action views */
+.management-head p {
+  color: #5f6f67;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.management-head > button,
+.file-library article > button,
+.history-list article > button,
+.action-library article > button,
+.management-empty > button {
+  font-size: 10px;
+}
+
+.file-library b,
+.history-list b,
+.action-library b {
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.file-library small,
+.history-list small,
+.history-list p,
+.action-library p {
+  color: #617169;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.management-empty > b {
+  font-size: 13px;
+}
+
+@media (max-width: 760px) {
+  .tool-rail nav span {
+    display: none;
+  }
+
+  .compact-ready .action-picker > button {
+    min-height: 68px;
+  }
+}

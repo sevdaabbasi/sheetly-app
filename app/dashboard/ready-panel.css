@@ -1,0 +1,162 @@
+.ready-panel .ai-scroll {
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 12px;
+  scrollbar-gutter: stable;
+}
+
+.ready-panel,
+.data-stage,
+.data-table {
+  min-height: 0;
+}
+
+.dash-main.week2 {
+  min-height: 100vh;
+  overflow: visible;
+}
+
+.studio-files {
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.data-table {
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable both-edges;
+}
+
+.compact-ready .management {
+  padding: 0;
+}
+
+.compact-ready .management-head {
+  margin-bottom: 10px;
+}
+
+.compact-ready .management-head h2 {
+  font-size: 13px;
+  margin: 0 0 4px;
+}
+
+.compact-ready .management-head p {
+  font-size: 8px;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.compact-ready .action-catalog {
+  display: block;
+  padding: 0;
+  margin-bottom: 9px;
+}
+
+.compact-ready .action-tabs {
+  padding-bottom: 6px;
+  scrollbar-width: thin;
+}
+
+.compact-ready .action-tabs button {
+  padding: 5px 7px;
+  font-size: 7px;
+}
+
+.compact-ready .action-search {
+  width: 100%;
+  height: 30px;
+}
+
+.compact-ready .action-builder {
+  display: block;
+  padding: 0;
+}
+
+.compact-ready .action-picker {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  margin-bottom: 10px;
+  max-height: 205px;
+  padding-right: 3px;
+  overflow-y: auto;
+}
+
+.compact-ready .action-picker > button {
+  min-width: 0;
+  display: block;
+  padding: 7px 5px;
+  text-align: center;
+}
+
+.compact-ready .action-picker > button > span {
+  width: 27px;
+  height: 27px;
+  margin: 0 auto 5px;
+}
+
+.compact-ready .action-picker b {
+  font-size: 7px;
+  line-height: 1.25;
+}
+
+.compact-ready .action-picker small {
+  display: none;
+}
+
+.compact-ready .action-form {
+  padding: 13px;
+  border-radius: 9px;
+}
+
+.compact-ready .form-icon,
+.compact-ready .action-form > p {
+  display: none;
+}
+
+.compact-ready .action-form h3 {
+  font-size: 12px;
+  margin: 0 0 8px;
+}
+
+.compact-ready .action-form label {
+  margin-top: 8px;
+}
+
+.compact-ready .action-form input,
+.compact-ready .action-form select {
+  padding: 8px;
+  margin-top: 4px;
+}
+
+.compact-ready .create-command {
+  margin-top: 12px;
+  padding: 10px;
+}
+
+.ready-panel .result-card {
+  margin: 0;
+}
+
+.result-dock {
+  flex: none;
+  padding: 10px;
+  background: #f7fbf9;
+  border-top: 1px solid #dce7e1;
+  box-shadow: 0 -8px 24px #10251a0b;
+}
+
+.result-dock .result-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.result-dock .result-actions .download-workbook {
+  grid-column: 1 / -1;
+}
+
+@media (max-height: 720px) {
+  .studio {
+    min-height: 520px;
+  }
+}
