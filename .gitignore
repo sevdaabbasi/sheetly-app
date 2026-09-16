@@ -56,4 +56,5 @@ next-env.d.ts
 .idea/
 .codex/
 .agents/
-.openai/
+.openai/*
+!.openai/hosting.json
