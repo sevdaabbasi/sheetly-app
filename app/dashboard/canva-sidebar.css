@@ -300,6 +300,71 @@
 .workspace-user b,.workspace-user small { display:block; }
 .workspace-user b { color:#26382f; font-size:10px; }
 .workspace-user small { margin-top:2px; color:#87928c; font-size:8px; }
+.workspace-user:hover { background:#f0f5f2 !important; border-radius:8px; }
+
+.profile-popup {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 12px;
+  right: 12px;
+  background: #0d2035;
+  border: 1px solid #1d3a52;
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.45);
+  z-index: 100;
+  animation: popupIn .18s ease;
+}
+@keyframes popupIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.profile-popup-avatar {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #1bd88f22, #17334a);
+  border: 1px solid #1bd88f44;
+  color: #1bd88f;
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.profile-popup-info b {
+  display: block;
+  color: #e8f0ea;
+  font-size: 12px;
+}
+.profile-popup-info small {
+  display: block;
+  margin-top: 3px;
+  color: #5d7e6e;
+  font-size: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.profile-popup-logout {
+  width: 100%;
+  margin-top: 14px;
+  padding: 8px;
+  border: 1px solid #2a4a62;
+  border-radius: 9px;
+  color: #91a8b5;
+  background: #122030;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 700;
+  text-align: center;
+  transition: background .15s, color .15s;
+}
+.profile-popup-logout:hover {
+  background: #1a3048;
+  color: #e0eaf0;
+}
+
 
 .studio { grid-template-columns: minmax(480px, 1fr) 380px; }
 .sidebar-collapsed .dash-main.week2 { max-width:none; }

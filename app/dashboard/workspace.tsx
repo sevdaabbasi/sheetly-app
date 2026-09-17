@@ -1036,6 +1036,34 @@ function Sidebar({
   selectFile: (id: string) => void;
   addFile: () => void;
 }) {
+  const [profileOpen, setProfileOpen] = useState(false);
+  const [user, setUser] = useState<{ name: string; email: string } | null>(null);
+
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem("sheetly_user");
+      if (raw) setUser(JSON.parse(raw) as { name: string; email: string });
+    } catch {}
+  }, []);
+
+  function getInitials(name: string) {
+    return name
+      .trim()
+      .split(/\s+/)
+      .slice(0, 2)
+      .map((w) => w[0]?.toUpperCase() ?? "")
+      .join("");
+  }
+
+  function logout() {
+    localStorage.removeItem("sheetly_session");
+    localStorage.removeItem("sheetly_user");
+    window.location.href = "/login";
+  }
+
+  const initials = user ? getInitials(user.name) : "?";
+  const displayName = user?.name ?? "Kullanıcı";
+
   const items: { id: View; icon: string; label: string; count?: number }[] = [
     { id: "workspace", icon: "▦", label: "Çalışma alanı" },
     { id: "files", icon: "♧", label: "Dosyalarım", count: files.length },
@@ -1083,7 +1111,14 @@ function Sidebar({
           >
             {collapsed ? "›" : "‹"}
           </button>
-          <span className="rail-avatar">EA</span>
+          <button
+            className="rail-avatar"
+            title={displayName}
+            onClick={() => setProfileOpen((v) => !v)}
+            style={{ border: 0, cursor: "pointer" }}
+          >
+            {initials}
+          </button>
         </div>
       </aside>
       <aside className={`asset-drawer ${collapsed ? "is-closed" : ""}`}>
@@ -1147,14 +1182,29 @@ function Sidebar({
             </>
           )}
         </div>
-        <footer>
-          <div className="workspace-user">
-            <span>EA</span>
-            <div>
-              <b>Workspace</b>
-              <small>Yerel ücretsiz plan</small>
+        <footer style={{ position: "relative" }}>
+          {profileOpen && (
+            <div className="profile-popup">
+              <div className="profile-popup-avatar">{initials}</div>
+              <div className="profile-popup-info">
+                <b>{displayName}</b>
+                {user?.email && <small>{user.email}</small>}
+              </div>
+              <button className="profile-popup-logout" onClick={logout}>
+                ↪ Çıkış yap
+              </button>
             </div>
-          </div>
+          )}
+          <button
+            className="workspace-user"
+            onClick={() => setProfileOpen((v) => !v)}
+            style={{ width: "100%", border: 0, cursor: "pointer", background: "transparent", textAlign: "left", padding: 0 }}
+          >
+            <span>{initials}</span>
+            <div>
+              <b>{displayName}</b>
+            </div>
+          </button>
         </footer>
       </aside>
     </>

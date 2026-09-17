@@ -49,6 +49,9 @@ export default function LoginPage() {
       }
       const result = await response.json();
       localStorage.setItem("sheetly_session", result.token);
+      if (result.user) {
+        localStorage.setItem("sheetly_user", JSON.stringify({ name: result.user.name, email: result.user.email }));
+      }
       router.push("/dashboard");
     } catch (exception) {
       setError(
