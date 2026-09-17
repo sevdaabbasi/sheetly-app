@@ -1,0 +1,76 @@
+
+import type { ActionCategory, ReadyAction } from "./types";
+
+export const API_URL =
+  process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:5190";
+
+export const ACTION_CATEGORIES: ActionCategory[] = [
+  "Satırlar",
+  "Temizleme",
+  "Kolonlar",
+  "Raporlama",
+  "Çoklu dosya",
+];
+
+export const READY_ACTIONS: ReadyAction[] = [
+  { id: "delete", icon: "−", title: "Satırları sil", description: "Koşula uyan satırları kaldır.", category: "Satırlar" },
+  { id: "highlight", icon: "◩", title: "Satırları boya", description: "Koşula uyan satırları renklendir.", category: "Satırlar" },
+  { id: "filter", icon: "⌕", title: "Satırları filtrele", description: "Yalnızca koşula uyan satırları tut.", category: "Satırlar" },
+  { id: "sortText", icon: "AZ", title: "Metne göre sırala", description: "A–Z veya Z–A sıralama yap.", category: "Satırlar" },
+  { id: "sortNumber", icon: "12", title: "Sayıya göre sırala", description: "Sayısal değerleri sırala.", category: "Satırlar" },
+  { id: "duplicate", icon: "⌁", title: "Mükerrerleri kaldır", description: "İlk, son veya en yüksek kaydı koru.", category: "Satırlar" },
+  { id: "fill", icon: "◫", title: "Boşlukları doldur", description: "Boş hücrelere varsayılan değer yaz.", category: "Satırlar" },
+  { id: "validate", icon: "✓?", title: "Hatalı verileri bul", description: "Boş, e-posta, telefon, sayı ve tarih hatalarını çıkar.", category: "Satırlar" },
+  { id: "addRow", icon: "+R", title: "Yeni satır ekle", description: "Kolon değerlerini girerek çalışma kopyasına yeni kayıt ekle.", category: "Satırlar" },
+  { id: "editRow", icon: "✎", title: "Satır/hücre düzenle", description: "Anahtar değere uyan satırdaki bir alanı değiştir.", category: "Satırlar" },
+  { id: "replace", icon: "↔", title: "Bul ve değiştir", description: "Metni bir kolonda veya tüm dosyada değiştir.", category: "Temizleme" },
+  { id: "clean", icon: "✦", title: "Metni temizle", description: "Boşluk, görünmeyen karakter ve sayı biçimini düzelt.", category: "Temizleme" },
+  { id: "case", icon: "Aa", title: "Büyük/küçük harf", description: "Metinlerin harf düzenini standartlaştır.", category: "Temizleme" },
+  { id: "split", icon: "A|B", title: "Kolonu böl", description: "Bir ayırıcıya göre iki yeni kolon oluştur.", category: "Temizleme" },
+  { id: "merge", icon: "A+B", title: "Kolonları birleştir", description: "İki kolonu yeni bir kolonda birleştir.", category: "Temizleme" },
+  { id: "extractText", icon: "Ab", title: "Metinden parça al", description: "Önce, sonra, soldan veya sağdan metin çıkar.", category: "Temizleme" },
+  { id: "extractDate", icon: "31", title: "Tarihten bilgi çıkar", description: "Yıl, ay, gün, çeyrek veya hafta günü oluştur.", category: "Temizleme" },
+  { id: "deleteColumn", icon: "−C", title: "Kolonu sil", description: "Seçilen kolonu kaldır.", category: "Kolonlar" },
+  { id: "renameColumn", icon: "Aa", title: "Kolonu yeniden adlandır", description: "Kolon başlığını değiştir.", category: "Kolonlar" },
+  { id: "constant", icon: "+C", title: "Sabit kolon ekle", description: "Tüm satırlara aynı değeri yazan kolon ekle.", category: "Kolonlar" },
+  { id: "rowNumber", icon: "#", title: "Sıra numarası ekle", description: "Her satıra otomatik sıra numarası ver.", category: "Kolonlar" },
+  { id: "calculate", icon: "ƒx", title: "Hesaplanan kolon", description: "İki kolonla toplama, çıkarma, çarpma veya bölme yap.", category: "Kolonlar" },
+  { id: "group", icon: "Σ", title: "Grupla ve özetle", description: "Adet, toplam, ortalama, en düşük veya en yüksek değer çıkar.", category: "Raporlama" },
+  { id: "splitFiles", icon: "ZIP", title: "Gruplara göre dosyalara böl", description: "Her kategori için ayrı Excel üret ve ZIP indir.", category: "Raporlama" },
+  { id: "recipe", icon: "▶", title: "İşlem şablonu çalıştır", description: "Kaydettiğin işlem zincirini başka bir Excel'e uygula.", category: "Raporlama" },
+  { id: "append", icon: "⇊", title: "Excel'leri alt alta birleştir", description: "Yüklü dosyaları tek çalışma tablosunda topla.", category: "Çoklu dosya" },
+  { id: "compare", icon: "≠", title: "İki Excel'i karşılaştır", description: "Eklenen, silinen ve değişen kayıtları raporla.", category: "Çoklu dosya" },
+  { id: "join", icon: "⋈", title: "Eksik kolonları tamamla", description: "Mevcut çalışanları koruyup ikinci dosyadaki eksik bilgileri getir.", category: "Çoklu dosya" },
+  { id: "fullJoin", icon: "⊕", title: "Kolon ve çalışanları tam birleştir", description: "İki dosyanın tüm kolonlarını ve eksik çalışanlarını tek tabloda topla.", category: "Çoklu dosya" },
+  { id: "missing", icon: "∅", title: "Eksik kayıtları bul", description: "İlk dosyada olup ikinci dosyada olmayanları çıkar.", category: "Çoklu dosya" },
+];
+
+export const STEP_NAMES: Record<string, string> = {
+  Filter: "Filtrele",
+  DeleteRows: "Eşleşen satırları sil",
+  HighlightRows: "Eşleşen satırları boya",
+  Sort: "Sırala",
+  RemoveDuplicates: "Mükerrerleri kaldır",
+  RenameColumn: "Kolonu yeniden adlandır",
+  DeleteColumn: "Kolonu sil",
+  FillBlanks: "Boşlukları doldur",
+  AddCalculatedColumn: "Hesaplanan kolon ekle",
+  FindReplace: "Bul ve değiştir",
+  CleanText: "Metni temizle",
+  ChangeCase: "Harf düzenini değiştir",
+  SplitColumn: "Kolonu böl",
+  MergeColumns: "Kolonları birleştir",
+  AddConstantColumn: "Sabit kolon ekle",
+  AddRowNumbers: "Sıra numarası ekle",
+  ExtractDatePart: "Tarihten bilgi çıkar",
+  ExtractText: "Metinden parça al",
+  GroupSummary: "Grupla ve özetle",
+  ValidateData: "Hatalı verileri bul",
+  AddRow: "Yeni satır ekle",
+  UpdateRows: "Satır/hücre düzenle",
+  AppendFiles: "Excel'leri birleştir",
+  CompareFiles: "Excel'leri karşılaştır",
+  JoinFiles: "Eksik kolonları tamamla",
+  FullJoinFiles: "Kolon ve çalışanları tam birleştir",
+  FindMissing: "Eksik kayıtları bul",
+};
