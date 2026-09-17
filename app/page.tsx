@@ -36,7 +36,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="logos"><span>10.000+ veri ekibinin yeni iş arkadaşı</span><div><b>ARVEN</b><b>nord</b><b>orbit.</b><b>MONO</b><b>kapsül</b></div></section>
+
 
       <section className="section shell" id="urun"><div className="section-kicker">NASIL ÇALIŞIR?</div><h2>Dosyadan sonuca,<br/><em>üç basit adımda.</em></h2><div className="feature-grid">{features.map(f=><article key={f.n}><span>{f.n}</span><div className={`feature-icon fi-${f.n}`}>{f.n==="01"?"⇧":f.n==="02"?"✦":"✓"}</div><h3>{f.title}</h3><p>{f.text}</p></article>)}</div></section>
 
